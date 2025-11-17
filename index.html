@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>DW MAKER (By : BTX)</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+  <link rel="stylesheet" href="style.css" />
+  <body>
+    <div id="map-footer">BTX</div>
+    <div class="tultipttleng" id="pathLengthTooltip"></divid></div>
+    <div class="button-container">
+      <button onclick="setBaseMode()">Select FAT/ODC</button>
+      <button onclick="setPolygonMode()">Select Coverage</button>
+      <button onclick="setPlacemarkMode()">Select HP/HC</button>
+      <button onclick="setAreaMode()">Select Area (Polygon)</button>
+      <button onclick="generatePaths()">Running</button>
+      <button onclick="exportKML()">Ekspor KML</button>
+      <button onclick="resetAll()">Reset</button>
+    </div>
+    <div class="main-container">
+      <div class="sidebar-kiri">
+        <div class="custom-file">
+          <label class="custom-file-label" for="kmlInput">Open File</label>
+          <input type="file" id="kmlInput" accept=".kml" />
+          <span class="file-name" id="fileName">Gass</span>
+        </div>
+        <div class="checkbox-container">
+        <label class="checkbox-label">
+            <input type="checkbox" id="checkbox-hp" name="Homepas1" value="Homepas2">
+            Target
+          </label>
+        </div>
+        <h3>📁 Folder </h3>
+        <div class="panel">
+          <ul id="baseGroupList"></ul>
+        </div>
+        <h3>📄 Berkas</h3>
+        <div class="panel">
+          <ul id="fileLayerList"></ul>
+        </div>
+      </div>
+
+      <div id="map"></div>
+
+      <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+      <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+      <script src="script.js"></script>
+  </body>

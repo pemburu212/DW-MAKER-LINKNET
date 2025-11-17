@@ -1,0 +1,197 @@
+#map {
+    height: 100vh;
+    flex: 1;
+}
+#map-footer {
+    position: fixed;
+    bottom: 0px;
+    left: 200px;
+    background-color: rgba(255,255,255,0.8);
+    padding: 1px 12px;
+    font-size: 14px;
+    color: #212020;
+    /* border-radius: 5px; */
+    z-index: 1000;
+    font-weight: bold;
+    pointer-events: none; /* Agar tidak ganggu klik peta */
+}
+.marker-label {
+    background: none;
+    padding: 2px 4px;
+    border: none;
+    border-radius: 0;
+    font-size: 13px;
+    font-family: Arial, sans-serif;
+    color: white;
+    font-weight: bold;
+    white-space: nowrap;
+
+        /* Outline (stroke effect) */
+    text-shadow:
+    -1px -1px 0 #000,
+    1px -1px 0 #000,
+    -1px  1px 0 #000,
+    1px  1px 0 #000;
+
+    pointer-events: none; /* supaya label tidak mengganggu klik marker */
+}
+body {
+    font-family: sans-serif;
+    padding: 0px;
+    box-sizing: border-box;
+}
+button {
+    margin: 5px;
+    }
+button {
+    background-color: #007bff; /* Biru */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+button:hover {
+    background-color: #0056b3;
+}
+button:active {
+    background-color: #004080;
+}
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+.button-container {
+    position: fixed;
+    top: 0px;
+    left: 300px; /* menyesuaikan lebar sidebar */
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;  /* Tombol lebih rapat */
+    padding: 10px 15px;
+    /* background: #003366; */
+    border-radius: 8px;
+    /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
+}
+.button-container button {
+    padding: 10px 16px;
+    font-size: 14px;
+    border-radius: 15px;
+    background-color: #d3e6de; /* Biru terang */
+    color: rgb(0, 0, 0);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+.button-container button:hover {
+    background-color: #0056b3;
+}
+.custom-file {
+    position: relative;
+    display: inline-block;
+}
+.custom-file input[type="file"] {
+    display: none; /* sembunyikan input asli */
+}
+.custom-file-label {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.custom-file-label:hover {
+    background-color: #0056b3;
+}
+.file-name {
+    margin-left: 10px;
+    font-style: italic;
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.main-container {
+    display: flex;
+    height: 100vh;
+}
+.sidebar-kiri {
+    width: 200px;
+    background-color: #f0f0f0;
+    border-right: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto;
+}
+.sidebar-kiri button {
+    margin: 5px;
+}
+.checkbox-container {
+    width: 100%;
+    max-width: 3px;
+    padding: 5px;
+    margin: 10px 0;
+}
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Jarak antara checkbox dan teks */
+    font-size: 16px;
+    cursor: pointer;
+}
+.checkbox-label input[type="checkbox"] {
+    margin: 0;
+}
+.group-item {
+    margin-bottom: 10px;
+}
+.group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.group-name {
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.group-actions button {
+    font-size: 10px;
+    margin-left: 5px;
+    padding: 2px 5px;
+    background-color: white
+}
+.group-actions button:hover {
+    background-color: blue
+}
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+}
+.panel {
+    max-height: 300px; /* batas tinggi */
+    overflow-y: auto;  /* scroll muncul bila perlu */
+    border: 1px solid #ccc;
+    padding: 8px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border-radius: 4px;
+    font-size: 12px;
+}
+/* Tree styles for file list (triangle toggles, indentation, lines) */
+#fileLayerList, #baseGroupList { list-style: none; padding-left: 0; margin: 0; }
+#fileLayerList li, #baseGroupList li { margin: 4px 0; }
+.tree-header { display: flex; align-items: center; gap: 6px; }
+.toggle { display: inline-block; width: 14px; text-align: center; cursor: pointer; user-select: none; transition: transform 0.12s ease; }
+.toggle.open { transform: rotate(90deg); }
+.tree-children { margin-left: 12px; padding-left: 8px; border-left: 1px dashed rgba(0,0,0,0.12); display: none; }
+.node-label { cursor: pointer; }
+
